@@ -21,7 +21,7 @@ export const UserDataModal = ({ setClose, data }) => {
   };
   return (
     <>
-      <form>
+      <form className="edit-data">
         <input value={name} onChange={(e) => setName(e.target.value)} />
         <input value={email} onChange={(e) => setEmail(e.target.value)} />
         <input value={role} onChange={(e) => setRole(e.target.value)} />

@@ -15,7 +15,7 @@ export const Search = () => {
 
   return (
     <div>
-      <form>
+      <form className="search-box">
         <input
           value={key}
           onChange={filter}

@@ -52,11 +52,14 @@ export const User = () => {
 
         <table className="table">
           <thead className="table head">
-            <tr className="table">
-              <input onChange={handleSelectAll} type="checkbox" />
+            <tr>
+              <td>
+                <input onChange={handleSelectAll} type="checkbox" />
+              </td>
               <td>Name</td>
               <td>Email</td>
               <td>Role</td>
+              <td>Action</td>
               <td>Action</td>
             </tr>
           </thead>
@@ -65,11 +68,13 @@ export const User = () => {
               return (
                 <>
                   <tr>
-                    <input
-                      onChange={handleToggle(e)}
-                      checked={checked.indexOf(e) !== -1}
-                      type="checkbox"
-                    />
+                    <td>
+                      <input
+                        onChange={handleToggle(e)}
+                        checked={checked.indexOf(e) !== -1}
+                        type="checkbox"
+                      />
+                    </td>
                     <td>{e.name}</td>
                     <td>{e.email}</td>
                     <td>{e.role}</td>
@@ -85,24 +90,11 @@ export const User = () => {
             })}
           </tbody>
         </table>
+        <button onClick={($) => handleDeleteAll()} className="selected btn">
+          Delete Selected
+        </button>
       </div>
-      <button onClick={($) => handleDeleteAll()} className="selected btn">
-        Delete Selected
-      </button>
-      <button
-        onClick={() => {
-          setPage(page - 1);
-        }}
-      >
-        Prev
-      </button>
-      <button
-        onClick={() => {
-          setPage(page + 1);
-        }}
-      >
-        Next
-      </button>
+
       {!close && <UserDataModal setClose={setClose} data={selectedEdit} />}
     </>
   );

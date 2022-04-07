@@ -42,14 +42,14 @@ const filterData = (data, key) => {
 
 const editData = (data, key) => {
   return data;
-  // return data.map((user) => {
-  //   if (user.id === key.id) {
-  //     user = {
-  //       ...user,
-  //       ...key
-  //     };
-  //   }
-  // });
+  return data.map((user) => {
+    if (user.id === key.id) {
+      user = {
+        ...user,
+        ...key
+      };
+    }
+  });
 };
 
 const deleteData = (data, key) => {

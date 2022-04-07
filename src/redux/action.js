@@ -27,7 +27,7 @@ export const DeleteData = (data) => {
 
 export const getData = () => async (dispatch) => {
   await fetch(
-    "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json?_page=${page}&_limit=3"
+    "https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json"
   )
     .then((data) => data.json())
     .then((res) => dispatch(FetchData(res)));
